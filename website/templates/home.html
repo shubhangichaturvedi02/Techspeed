@@ -1,0 +1,580 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>TechSpeed</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css" rel="stylesheet' %}">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+  <style>
+    .button {
+  background-color: #4CAF50; /* Green */
+  border: 1px solid green;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  width: 450px;
+  display: block;
+
+}
+.button:hover {
+  background-color: #3e8e41;
+}
+
+  </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.flip-box {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 15px solid #ffffff;
+  perspective: 1000px;
+  float:left;
+
+}
+
+.flip-box-inner {
+
+
+  width: 50%;
+  height: 50%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  float:right;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+
+.flip-box-back {
+  background-color: #555;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+</style>
+  <!-- =======================================================
+  * Template Name: Moderna - v4.0.1
+  * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div class="logo">
+        <h1 class="text-light"><a href="/"><span>Techspeed</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="active " href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+
+          <li><a href="/team">Team</a></li>
+
+          <li class="dropdown"><a href="#"><span>signup/signin</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              {% if user.is_authenticated %}
+              <li>Welcome {{user.username}}</li>
+                  <li><a href="/logout">Logout</a></li>
+                  {% else  %}
+              <li><a href="/signup">Create account</a></li>
+                  <li><a href="/signin">Login</a></li>
+
+              {% endif %}
+            </ul>
+          </li>
+          <li><a href="/work_with_us">Work With Us</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex justify-cntent-center align-items-center">
+
+    
+    <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+ 
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Techspeed</span></h2>
+          <p class="animate__animated animate__fadeInUp">Get TechSpeed or all your technology needs.<br>
+          Commited to helping older adults navigate the digital world.
+          </p>
+          <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+        </div>
+      </div>
+ 
+      <!-- Slide 2 -->
+       <div class="carousel-item">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">Learn technology, improve your life</h2>
+          <p class="animate__animated animate__fadeInUp">We help you get more tech saavy by providing:<br><br>
+          1. Free Instant Written &video Tutorials. <br>
+            2. Within the hour phone and video support.<br>
+             3. Online 1-on-1 & group educational lessons<br>
+          </p>
+          <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+        </div>
+      </div> 
+
+      <!-- Slide 3 -->
+       <div class="carousel-item">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">Grow With Technology</h2>
+          <p class="animate__animated animate__fadeInUp">We teach you to grow with technology in with the help of our profesionals.
+          They will help you to be compatible with today's digital world. </p>
+          <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+        </div>
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div> 
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Services Section ======= -->
+  <section class="services">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-6 col-lg-6 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="icon-box icon-box-pink">
+
+              <p class="description" style="font-size:20px">As time progresses, technology is becoming a bigger part
+                of everyday life. Find this technology confusing? <b>Well you’re not alone.</b><br><br>
+                <b>TechSpeed</b> is here to solve all your technology issues and educate you on
+                how to take advantage of the benefits of the digital world.
+              </p>
+            </div>
+          </div>
+
+
+          <!--<div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box icon-box-cyan">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+            </div>
+          </div>-->
+
+          <div class="col-md-6 col-lg-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box icon-box-green">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+
+              <p class="description"><b>Want to get highly affordable access to all our services</b></p>
+              <form action="/services" >
+              <button class="button" style="background-color:#0d2735 ">Become A Member</button>
+              </form>
+            </div>
+          </div>
+
+          <!--<div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box icon-box-blue">
+              <div class="icon"><i class="bx bx-world"></i></div>
+              <h4 class="title"><a href="">Nemo Enim</a></h4>
+              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+            </div>
+          </div>-->
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+<form class="example" action="/search/">
+  <input type="text" placeholder="Search for Query" name="q" style="border-radius: 50px / 15px; height: 80px;box-shadow: 5px 10px #888888;">
+  <button type="submit" style="background-color:#a2cce3;box-shadow: 5px 10px #888888; border-radius: 12px;height: 80px"><i class="fa fa-search" ></i></button>
+</form>
+
+<br><br><br>
+    <!-- ======= Why Us Section ======= -->
+    {% for s in show %}
+    <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6 video-box">
+           
+            <img src="https://mk0digitallearn7ttjx.kinstacdn.com/wp-content/uploads/2018/12/digital-learning.jpg" class="img-fluid" alt="">
+            <a href="{{s.youtube_link}}" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true" target="_blank"></a> 
+          </div>
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
+
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-fingerprint"></i></div>
+              
+              <p style="padding:25px">{{s.answer_heading}}</p>
+              <h2><a href="{{s.article_link}}" target="_blank">Click To Visit Article</a></h2>
+            </div>
+
+
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+{% endfor %}
+
+
+    <!-----service images---->
+<div class="flip-box" style="float:right">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+      <img src="https://www.sageminder.com/portals/0/elderly-lady-on-the-phone.jpg" alt="Paris" style="width:300px;height:200px">
+    </div>
+    <div class="flip-box-back">
+     <div class="flip-box-front">
+      <img src="https://www.ovlg.com/sites/files/uploaded_files/how-an-elderly-person-can-stop-harassing-collection-calls.jpg" alt="Paris" style="width:300px;height:200px;height:200px">
+    </div>
+    </div>
+  </div>
+</div>
+
+<p>
+<marquee width="70%" direction="right" height="70px">
+<a href="/services"><h1>TELEPHONIC CHAT SUPORT</h1></a>
+</marquee>
+<ul style="margin-left:10%;font-size:25px">
+              <li>Within a hour Tech and chat support<i class="bi bi-check2-circle"></i>
+              <li>Book your appointment in your convenient time slot<i class="bi bi-check2-circle"></i>
+              <li>Clear all your doubts with experts<i class="bi bi-check2-circle"></i>
+</ul>
+      </p>
+
+<br>
+<hr style="width:100%;text-align:left;margin-left:0">
+<BR>
+
+<div class="flip-box" style="float:right">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+      <img src="https://thumbs.dreamstime.com/z/older-education-learning-to-work-online-computer-elderly-man-woman-learn-young-teacher-how-laptop-178880852.jpg" alt="Paris" style="width:300px;height:200px;">
+
+    </div>
+    <div class="flip-box-back">
+     <div class="flip-box-front">
+      <img src="https://ontesol.com/wp-content/uploads/2020/07/young-woman-helping-senior-man-with-payment-on-internet-3823488-scaled-1-1030x687.jpg" alt="Paris" style="width:300px;height:200px">
+    </div>
+    </div>
+  </div>
+
+
+</div>
+<p>
+<marquee width="70%" direction="right" height="70px">
+ <a href="/services"><h1>1 ON 1 ONLINE LESSON</h1></a>
+</marquee>
+<ul style="margin-left:10%;font-size:25px">
+              <li>One on one group and educational session<i class="bi bi-check2-circle"></i>
+              <li>Get the detailed knowledge<i class="bi bi-check2-circle"></i>
+              <li>Problem solving in group sessions <i class="bi bi-check2-circle"></i>
+</ul>
+      </p>
+      <br>
+<hr style="width:100%;text-align:left;margin-left:0">
+<BR>
+
+
+<div class="flip-box" style="float:right">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+      <img src="https://www.irishtimes.com/polopoly_fs/1.3595803.1534235564!/image/image.jpg_gen/derivatives/box_620_330/image.jpg" alt="Paris" style="width:300px;height:200px">
+    </div>
+    <div class="flip-box-back">
+     <div class="flip-box-front">
+      <img src="https://cdn.cheapism.com/images/081616_free_online_courses_for_seniors_slide.max-784x410_o5JPZai.jpg" alt="Paris" style="width:300px;height:200px">
+    </div>
+    </div>
+  </div>
+</div>
+<p>
+<marquee width="70%" direction="right" height="70px">
+ <a href="/services"><h1>VIDEO CHAT SUPPORT </h1></a>
+ </marquee>
+<ul style="margin-left:10%; font-size:25px">
+              <li>
+                Get free instant written and video support tutorials.<i class="bi bi-check2-circle">
+              </i></li>
+  <li>We are here for helping you.<i class="bi bi-check2-circle"></i></li>
+  <li>There is no age limit of learning.<i class="bi bi-check2-circle"></i></li>
+</ul>
+      </p>
+    <br><br><br>
+
+
+
+
+    <!-- mnbnbnbbb-->
+   <!--  <div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+      <img src="https://www.sageminder.com/portals/0/elderly-lady-on-the-phone.jpg" alt="Paris" style="width:300px;height:200px">
+    </div>
+    <div class="flip-box-back">
+     <div class="flip-box-front">
+      <img src="https://www.ovlg.com/sites/files/uploaded_files/how-an-elderly-person-can-stop-harassing-collection-calls.jpg" alt="Paris" style="width:300px;height:200px;height:200px">
+    </div>
+    </div>
+  </div>
+</div>
+
+<p>
+<marquee width="70%" direction="right" height="70px">
+<a href="/services"><h1>TELEPHONIC CHAT SUPORT</h1></a>
+</marquee>
+<ul style="margin-left:350px;font-size:25px">
+              <li>Within a hour Tech and chat support<i class="bi bi-check2-circle"></i>
+              <li>Book your appointment in your convenient time slot<i class="bi bi-check2-circle"></i>
+              <li>Clear all your doubts with experts<i class="bi bi-check2-circle"></i>
+</ul>
+      </p>
+
+<br>
+<hr style="width:100%;text-align:left;margin-left:0">
+<BR>
+
+<div class="flip-box" style="float:right;">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+      <img src="https://thumbs.dreamstime.com/z/older-education-learning-to-work-online-computer-elderly-man-woman-learn-young-teacher-how-laptop-178880852.jpg" alt="Paris" style="width:300px;height:200px;  float:left;">
+
+    </div>
+    <div class="flip-box-back">
+     <div class="flip-box-front">
+      <img src="https://ontesol.com/wp-content/uploads/2020/07/young-woman-helping-senior-man-with-payment-on-internet-3823488-scaled-1-1030x687.jpg" alt="Paris" style="width:300px;height:200px">
+    </div>
+    </div>
+  </div>
+
+
+</div>
+<p>
+<marquee width="70%" direction="right" height="70px">
+ <a href="/services"><h1>1 ON 1 ONLINE LESSON</h1></a>
+</marquee>
+<ul style="margin-left:10%;font-size:25px">
+              <li>One on one group and educational session<i class="bi bi-check2-circle"></i>
+              <li>Get the detailed knowledge<i class="bi bi-check2-circle"></i>
+              <li>Problem solving in group sessions <i class="bi bi-check2-circle"></i>
+</ul>
+      </p>
+      <br>
+<hr style="width:100%;text-align:left;margin-left:0">
+<BR>
+
+
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+      <img src="https://www.irishtimes.com/polopoly_fs/1.3595803.1534235564!/image/image.jpg_gen/derivatives/box_620_330/image.jpg" alt="Paris" style="width:300px;height:200px">
+    </div>
+    <div class="flip-box-back">
+     <div class="flip-box-front">
+      <img src="https://cdn.cheapism.com/images/081616_free_online_courses_for_seniors_slide.max-784x410_o5JPZai.jpg" alt="Paris" style="width:300px;height:200px">
+    </div>
+    </div>
+  </div>
+</div>
+<p>
+<marquee width="70%" direction="left" height="70px">
+ <a href="/services"><h1>VIDEO CHAT SUPPORT </h1></a>
+ </marquee>
+<ul style="margin-left:350px; font-size:25px">
+              <li>
+                Get free instant written and video support tutorials.<i class="bi bi-check2-circle">
+              </i></li>
+  <li>We are here for helping you.<i class="bi bi-check2-circle"></i></li>
+  <li>There is no age limit of learning.<i class="bi bi-check2-circle"></i></li>
+</ul>
+      </p>
+    <br><br><br> -->
+   
+ <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/services">Services</a></li>
+
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="/services">1 on 1 online lessons</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/services">vedio chat supportt</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/services">Telephonic chat support</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/services">Group discussion</a></li>
+
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+
+              <strong>Phone:</strong> +1 8886 8734 92<br>
+              <strong>Email:</strong> admin@uptospeedyou.com<br>
+            </p>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>About Techspeed</h3>
+            <p>TechSpeed provides you a plateform where you can enhance your knowledge regerding digital devices.</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Techspeed</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/ -->
+
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,264 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Saurav">
+<link href="{% static 'css/bootstrap.min.css" rel="stylesheet">
+<title>Responsive Registration Form Template</title>
+   <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css" rel="stylesheet' %}">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+</head>
+<header id="header" class="fixed-top d-flex align-items-center ">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div class="logo">
+        <h1 class="text-light"><a href="/"><span>TechSpeed</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="" href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+
+          <li><a class="active" href="team.html">Team</a></li>
+
+          <li class="dropdown"><a href="#"><span>signup/signin</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/signup">Create account</a></li>
+                  <li><a href="/signin">Login</a></li>
+            </ul>
+          </li>
+          <li><a href="/work_with_us">Work With Us</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+<body class="bg-light">
+ <div class="container">
+  <div class="py-5 text-center">
+
+  
+  </div>
+ </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div>
+      <h3 style="text-align: center">Want to become a member?For Rs.100/month or $2,members receive:</h3>
+      <br>
+      <ol style="margin-left: 50px">
+      <li>1 hour telephone and video chat technical support.</li>
+      <li>One 1-on-1 30 minute lesson covering common online platforms and topics of your choice.</li>
+      <li>Access to our monthly group lessons covering a common online platform and topic.</li>
+    </ol>
+    <h5 style="text-align: center">Fill this form and become our member</h5>
+      <div>
+     <form action="/signup/" method="post">
+      {% csrf_token %}
+                  {% for message in messages%}
+                      <h3 align="center" style="color: red;">{{message}}</h3>
+                  {% endfor %}
+     <div class="form-group">
+    <label for="exampleInputEmail1">User Name</label>
+    <input type="text" name="username" class="form-control" id="firstName" placeholder="Jem" required>
+    </div>
+
+    <div class="form-group">
+    <label for="exampleInputEmail1">First Name</label>
+    <input type="text" name="first_name" class="form-control" id="firstName" placeholder="Jem" required>
+    </div>
+
+    <div class="form-group">
+    <label for="exampleInputEmail1">Last Name</label>
+    <input type="text" name="last_name" class="form-control" id="firstName" placeholder="Jem" required>
+    </div>
+
+    <div class="form-group">
+    <label for="exampleInputEmail1">Mobile No.</label>
+    <input type="text" name="mobile_no" class="form-control" id="firstName" placeholder="Jem" required>
+    </div>
+     
+    <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Jem@email.com" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputPassword1">Address </label>
+    <input type="text" name="address" class="form-control" id="address" placeholder="1234 Main St" required>
+    <small class="form-text text-muted">Street Address</small>
+  </div>
+  <!--<div class="form-group">
+    <input type="text" class="form-control" id="address" required>
+    <small class="form-text text-muted">Street Address Line 2 </small>
+  </div>-->
+  <div class="row">
+          <div class="col-md-5 mb-3">
+            <!--<label for="country">Country</label>
+           <select class="custom-select d-block w-100" id="country" required>
+              <option value="">Choose...</option>
+              <option>United States</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid country.
+            </div>-->
+            <div class="form-group">
+    <label for="exampleInputEmail1">Country</label>
+    <input type="text" name="country" class="form-control" id="firstName" placeholder="Jem" required>
+    </div>
+          </div>
+
+          <div class="col-md-4 mb-3">
+             <div class="form-group">
+    <label for="exampleInputEmail1">State</label>
+    <input type="text" name="state" class="form-control" id="firstName" placeholder="Jem" required>
+    </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="zip">zip</label>
+            <input type="text" name="Postal_code" class="form-control" id="zip" placeholder="" required>
+            <div class="invalid-feedback">
+              Zip code required.
+            </div>
+          </div>
+        </div>
+      <div class="form-group">
+    <label for="exampleInputEmail1">Password</label>
+    <input type="password" name="password" class="form-control" id="firstName" placeholder="Jem" required>
+    </div>
+
+    <div class="form-group">
+    <label for="exampleInputEmail1">Confirm Password</label>
+    <input type="password" name="cnf_password" class="form-control" id="firstName" placeholder="Jem" required>
+    </div>
+       <p><input type="checkbox" required> I agree to terms of services and policy of Techspeed</p>
+<br>
+<hr class="mb-4">
+  <button type="submit" class="btn btn-primary btn-lg btn-block">Proceed to Pay</button>
+  </form>
+    </div>
+  </div>
+  <br>
+    <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/services">Services</a></li>
+
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="/services">1 on 1 online lessons</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/services">vedio chat supportt</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/services">Telephonic chat support</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/services">Group discussion</a></li>
+
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+
+              <strong>Phone:</strong> +1 8886 8734 92<br>
+              <strong>Email:</strong> admin@uptospeedyou.com<br>
+            </p>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>About Techspeed</h3>
+            <p>TechSpeed provides you a plateform where you can enhance your knowledge regerding digital devices.</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Techspeed</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/ -->
+
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+  
+  
+        
+  </div>
+</body>
+</html>
