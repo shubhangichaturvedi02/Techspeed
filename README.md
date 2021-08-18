@@ -2,4 +2,4 @@
 
 A django Website-
 
-Website Link- http://shubhangi0205.pythonanywhere.com/
+Website Link- http://techspeed.pythonanywhere.com/
